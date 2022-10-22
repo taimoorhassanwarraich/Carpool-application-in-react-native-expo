@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Humsawar-expo",
+    "slug": "Humsawar-expo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
