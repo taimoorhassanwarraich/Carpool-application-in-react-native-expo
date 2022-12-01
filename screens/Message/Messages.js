@@ -28,7 +28,7 @@ const Messages_data = [
     userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
     messageTime: '2 hours ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'I will pick you up at 8.30am sharp',
   },
   {
     id: '3',
@@ -36,7 +36,7 @@ const Messages_data = [
     userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
     messageTime: '1 hours ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'I will be late by five minutes',
   },
   {
     id: '4',
@@ -44,7 +44,7 @@ const Messages_data = [
     userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
     messageTime: '1 day ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'It was nice sharing ride with you',
   },
   {
     id: '5',
@@ -52,7 +52,7 @@ const Messages_data = [
     userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
     messageTime: '2 days ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'Hope to see you again!',
   },
 ];
 

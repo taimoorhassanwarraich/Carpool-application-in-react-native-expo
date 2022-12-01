@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { store } from './store';
@@ -10,12 +10,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './screens/LoginScreen';
 import RegistrationScreen from './components/RegistrationScreen';
 import { useState } from 'react';
-import {onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import "@react-native-async-storage/async-storage"
 import CompleteRegistration from './components/CompleteRegistration';
 import Dashboard from './screens/Dashboard';
 import { authentication } from './firebase';
 import Chat from './screens/Message/Chat';
+import SearchRide from './screens/Ride Screens/SearchRide';
 
 
 export default function App() {
@@ -35,12 +36,16 @@ export default function App() {
       <NavigationContainer>
         <SafeAreaProvider>
           {
-            isSignedIn 
+            isSignedIn
               ?
               <Stack.Navigator>
                 <Stack.Screen name='Dashboard' component={Dashboard} options={{ headerShown: false }} />
                 <Stack.Screen name='CompleteRegistration' component={CompleteRegistration} options={{ headerShown: false }} />
-                <Stack.Screen name='Chat' component={Chat} options={{ headerShown: false }} />
+                <Stack.Screen name='Chat' component={Chat} options={({ route }) => ({
+                  title: route.params.userName,
+                  headerBackTitleVisible: false,
+                })} />
+                <Stack.Screen name='SearchRide' component={SearchRide} />
               </Stack.Navigator>
               :
               <Stack.Navigator>
