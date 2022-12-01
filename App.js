@@ -15,6 +15,7 @@ import "@react-native-async-storage/async-storage"
 import CompleteRegistration from './components/CompleteRegistration';
 import Dashboard from './screens/Dashboard';
 import { authentication } from './firebase';
+import Chat from './screens/Message/Chat';
 
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
               <Stack.Navigator>
                 <Stack.Screen name='Dashboard' component={Dashboard} options={{ headerShown: false }} />
                 <Stack.Screen name='CompleteRegistration' component={CompleteRegistration} options={{ headerShown: false }} />
+                <Stack.Screen name='Chat' component={Chat} options={{ headerShown: false }} />
               </Stack.Navigator>
               :
               <Stack.Navigator>
