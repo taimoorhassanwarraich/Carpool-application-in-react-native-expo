@@ -1,6 +1,6 @@
 import { View, Text, Alert } from 'react-native'
 import React, { useState } from 'react'
-import { authentication } from '../firebase'
+import { authentication } from '../../firebase'
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
 
 

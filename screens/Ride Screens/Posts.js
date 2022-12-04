@@ -1,40 +1,45 @@
-import { StyleSheet, Text, TouchableOpacity, View , TextInput} from 'react-native'
-import React, {useEffect} from 'react'
-import {LiveLocation} from '../../components/Location/LiveLocation'
-import { useDispatch, useSelector } from 'react-redux'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import RideCard from './RideCard'
 
-const Rides = ({navigation}) => {
+const Posts = ({navigation}) => {
   return (
     <View style={styles.container}>
-
-      <TouchableOpacity style={styles.btn} onPress={()=>{
-        navigation.navigate('Create Ride')
-      }}>
-        <Ionicons name='add' style={styles.btntxt} size={50}>
-          <Text style={{color:'white'}}>Search</Text>
-        </Ionicons>
+      <View style={{flex:0}}>
+        <Text style={{margin:10, fontWeight:'bold'}}>Posted Rides:</Text>
+      <RideCard />
+      <RideCard/>
+      <RideCard/>
+      </View>
+      <View style={styles.btn}>
+      <TouchableOpacity onPress={()=>{navigation.navigate("Create Ride")}}>
+        <MaterialIcons name='add-location-alt' color='white' size={50} onPress={()=>{navigation.navigate("Create Ride")}}/>
+        <Text style={{color:'white'}}>Post Ride</Text>
       </TouchableOpacity>
+      </View>
+
     </View>
-  ) 
+  )
 }
 
-export default Rides
+export default Posts
 
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    justifyContent:'center',
+    justifyContent:'space-between',
     alignItems:'center'
   },
   btn:{
     backgroundColor:'blue',
-    height:90,
-    width:90,
+    height:100,
+    width:100,
     alignItems:'center',
     justifyContent:'center',
-    marginLeft:210,
-    marginTop:500,
+    marginBottom:5,
+    marginLeft:200,
     borderRadius:50
 
   },

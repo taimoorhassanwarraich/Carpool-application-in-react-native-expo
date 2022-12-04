@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import tw from 'tailwind-react-native-classnames'
-import ForgotPassword from './ForgotPassword'
+import ForgotPassword from '../screens/Authentication/ForgotPassword';
 import { authentication, db, } from '../firebase';
 import { getDoc, doc, } from "firebase/firestore";
 import { TextInput } from 'react-native-gesture-handler';

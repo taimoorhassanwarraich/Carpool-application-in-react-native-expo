@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar, TextInput, TouchableOpacity } from 'react-native';
 import { doc, setDoc, addDoc, collection} from "firebase/firestore";
-import { authentication, db } from '../firebase';
+import { authentication, db } from '../../firebase';
 import "@react-native-async-storage/async-storage";
 import { sendPasswordResetEmail } from 'firebase/auth';
 

@@ -1,15 +1,15 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import About from '../components/About';
-import History from '../components/History';
+import History from './History/History';
 import HomeScreen from '../components/HomeScreen';
-import SignOut from './SignOut';
-import Profile from '../components/Profile'
+import SignOut from './Authentication/SignOut';
+import Profile from './Profile/Profile'
 import CustomDrawer from '../components/CustomDrawer';
 import {DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer'
 const Drawer = createDrawerNavigator();
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Messages from './Message/Messages';
-import Settings from '../components/Settings';
+import Settings from './Setting/Settings';
 import FontAwesome from'react-native-vector-icons/FontAwesome'
 import AntDesign from'react-native-vector-icons/AntDesign'
 import TabNavigator from '../Navigations/TabNavigator';

@@ -7,18 +7,19 @@ import { store } from './store';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './screens/LoginScreen';
-import RegistrationScreen from './components/RegistrationScreen';
+import LoginScreen from './screens/Authentication/LoginScreen';
+import RegistrationScreen from './screens/Authentication/RegistrationScreen';
 import { useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import "@react-native-async-storage/async-storage"
-import CompleteRegistration from './components/CompleteRegistration';
+import CompleteRegistration from './screens/Authentication/CompleteRegistration';
 import Dashboard from './screens/Dashboard';
 import { authentication } from './firebase';
 import Chat from './screens/Message/Chat';
 import SearchRide from './screens/Ride Screens/SearchRide';
 import LiveLocation from './components/Location/LiveLocation';
 import CreateRide from './screens/Ride Screens/CreateRide';
+import DocVerification from './screens/Authentication/DocVerification';
 
 
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
                 <Stack.Screen name='SearchRide' component={SearchRide} options={{}} />
                 <Stack.Screen name='LiveLocation' component={LiveLocation} options={{ headerShown: false }} />
                 <Stack.Screen name='Create Ride' component={CreateRide} options={{ headerShown: true }} />
+                <Stack.Screen name='Doc Verification' component={DocVerification} options={{ headerShown: true }} />
               </Stack.Navigator>
               :
               <Stack.Navigator>

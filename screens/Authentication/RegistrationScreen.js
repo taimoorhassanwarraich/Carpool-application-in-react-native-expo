@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity} from 'react-native';
 import React , {useState} from 'react';
-import { authentication } from '../firebase';
-import {createUserWithEmailAndPassword, reauthenticateWithRedirect,} from 'firebase/auth';
+import { authentication } from '../../firebase';
+import {createUserWithEmailAndPassword,} from 'firebase/auth';
 
 const RegistrationScreen = ({ navigation }) => {
 

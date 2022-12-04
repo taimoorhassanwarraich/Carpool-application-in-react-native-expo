@@ -6,17 +6,23 @@ import MapView, { Marker } from 'react-native-maps'
 import tw from 'tailwind-react-native-classnames';
 import { selectOrigin, setDestination, setOrigin } from '../../slices/navSlice';
 import { useDispatch, useSelector } from 'react-redux'
+import { SelectList } from 'react-native-dropdown-select-list'
 
 const SearchRide = () => {
+  const data = [
+    { key: '1', value: 'Any', },
+    { key: '2', value: 'Male' },
+    { key: '3', value: 'Female (Pink)' },
+  ]
   const dispath = useDispatch();
   const origin = useSelector(selectOrigin);
   return (
-    <SafeAreaView style={styles.mainContainer}>
-      <KeyboardAvoidingView style={styles.searchCard}>
+    <View style={styles.mainContainer}>
+      <View style={styles.searchCard}>
 
         <GooglePlacesAutocomplete
-          placeholder= "From"
-          placeholderTextColor="white"
+
+          placeholder="From"
           styles={styles.mapSearchTextHolder}
           fetchDetails={true}
 
@@ -27,8 +33,8 @@ const SearchRide = () => {
                 location: details.geometry.location,
                 description: data.description,
               })
-              );
-              dispath(setDestination(null));
+            );
+            dispath(setDestination(null));
           }}
           returnKeyType={"search"}
           enablePoweredByContainer={false}
@@ -43,9 +49,7 @@ const SearchRide = () => {
 
         <GooglePlacesAutocomplete
           placeholder="where to"
-          placeholderTextColor="white"
           styles={styles.mapSearchTextHolder}
-
           onPress={(data, details = null) => {
             console.log(details)
             // dispath(
@@ -68,12 +72,22 @@ const SearchRide = () => {
           nearbyPlacesApi="GooglePlacesSearch"
           debounce={400}
         />
-
-        <TouchableOpacity style={styles.btn}>
-          <Text>Search</Text>
-        </TouchableOpacity>
-
-      </KeyboardAvoidingView>
+        <SafeAreaView style={{ flexDirection: 'row' }}>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Search</Text>
+          </TouchableOpacity>
+          <SelectList
+            placeholder='Gender'
+            setSelected={(val) => setVehicleType(val)}
+            data={data}
+            onSelect={() => alert(selected)}
+            save="value"
+            label="Select Model"
+          />
+          
+        </SafeAreaView>
+      </View>
+      <SafeAreaView>
 
       <MapView
         mapType="mutedStandard"
@@ -90,14 +104,15 @@ const SearchRide = () => {
             coordinate={{
               latitude: origin.lat,
               longitude: origin.lng,
-            }} 
+            }}
             title="Origin"
             description={origin.description}
             identifier='origin'
-            />
+          />
         )}
       </MapView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </View>
   )
 }
 
@@ -105,7 +120,7 @@ export default SearchRide
 
 const styles = StyleSheet.create({
   mainContainer: {
-
+    flex: 1,
   },
   map: {
     height: 400,
@@ -114,27 +129,27 @@ const styles = StyleSheet.create({
 
   },
   searchCard: {
-    backgroundColor: 'lightblue',
+    flex: 0.6,
     padding: 3,
     margin: 4,
-    borderRadius: 3
+    borderRadius: 3,
+    justifyContent: 'space-between',
   },
   btn: {
     height: 50,
     width: 150,
     backgroundColor: 'white',
-    borderRadius: 5,
+    borderRadius: 1,
     borderWidth: 4,
     borderColor: 'black',
-    justifyContent: 'center',
+    alignSelf: 'auto',
     alignItems: 'center',
+    justifyContent: 'center',
+    marginRight:40
   },
   mapSearchTextHolder: {
     textInput: {
       fontSize: 18,
-      backgroundColor: 'white',
-      borderWidth: 5,
-      borderColor: 'white',
       height: 55,
       margin: 5,
       marginTop: 5,
@@ -143,8 +158,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 0,
       borderRadius: 5,
-      borderColor: 'black',
-      borderWidth: 5,
+      borderWidth: 1,
     },
   }
 

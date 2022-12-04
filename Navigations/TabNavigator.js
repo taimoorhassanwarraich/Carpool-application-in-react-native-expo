@@ -17,13 +17,15 @@ const TabNavigator = () => {
                 <Text> Rides</Text>
                 </>
 
-            ) }}/>
+            ),tabBarActiveBackgroundColor:'lightblue'
+             }}/>
             <Tab.Screen name='Posts' component={Posts} options={{tabBarIcon: ()=>(
                 <>
                  <Ionicons name='car' color={'blue'} size={28}></Ionicons>
                 <Text>Posts</Text>
                 </>
-            )}}/>
+            ),tabBarActiveBackgroundColor:'lightblue' 
+            }}/>
             
             
         </Tab.Navigator>

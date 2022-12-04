@@ -1,14 +1,14 @@
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import DatePicker from 'react-native-datepicker'
-import { LogBox } from 'react-native';
+
 import DateTimePickerModal from "react-native-modal-datetime-picker";
  
 
 const CreateRide = ({navigation}) => {
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+    const [isVerified, setIsVerified] = useState(false);
     const [date, setDate] = useState('09-10-2021');
 
     const showDatePicker = () => {
@@ -29,7 +29,7 @@ const CreateRide = ({navigation}) => {
     <View style={styles.mainContainer}>
 
     <View style={{flexDirection:'row', margin:5}}>
-    <Ionicons name='pricetag' size={28} backgroundColor='red' style={{margin:5,marginTop:20}}></Ionicons>
+    <Ionicons name='pricetag' size={24} backgroundColor='red' style={{margin:5,marginTop:20}}></Ionicons>
       <TextInput style={styles.priceInput} placeholderTextColor='black' placeholder='Price'keyboardType='number-pad'/>
     </View>
 
@@ -40,6 +40,16 @@ const CreateRide = ({navigation}) => {
       <TextInput placeholder='Start Location' style={styles.travel} placeholderTextColor='black'></TextInput>
       <TextInput placeholder='Destination' style={styles.travel} placeholderTextColor='black'></TextInput>
       <TextInput placeholder={'Select Date'} style={styles.travel} placeholderTextColor='black' onPressOut={showDatePicker} editable={false} value={date}></TextInput>
+      { isVerified
+      ?
+      <TouchableOpacity style={styles.searchbtn} onPress={()=>{navigation.goBack()}}>
+        <Text style={{fontWeight:'bold', color:'white', fontSize:18}}>Confirm</Text>
+      </TouchableOpacity>
+      :
+      <TouchableOpacity style={styles.searchbtn} onPress={()=>{navigation.navigate("Doc Verification")}}>
+        <Text style={{fontWeight:'bold', color:'white', fontSize:18}}>Confirm</Text>
+      </TouchableOpacity>
+    }
       <DateTimePickerModal
         isVisible={isDatePickerVisible}
         mode="date"
@@ -105,6 +115,16 @@ const styles = StyleSheet.create({
         paddingBottom:2
     },
     searchbtn:{
-        
+        backgroundColor:'white',
+        height:60,
+        padding:15,
+        borderColor:'black',
+        borderWidth:3,
+        borderRadius:30,
+        margin:3,
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'lightblue',
+        marginTop:50
     }
 })

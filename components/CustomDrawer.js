@@ -3,7 +3,7 @@ import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawe
 import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import SignOut from '../screens/SignOut'
+import SignOut from '../screens/Authentication/SignOut'
 
 
 const CustomDrawer = (props) => {

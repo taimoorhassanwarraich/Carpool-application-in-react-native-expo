@@ -1,6 +1,6 @@
 import { Alert, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { authentication } from '../firebase'
+import { authentication } from '../../firebase'
 import { signOut } from 'firebase/auth'
 
 const SignOut = () => {

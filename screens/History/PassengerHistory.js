@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const History = () => {
+const PassengerHistory = () => {
   return (
     <View>
-      <Text>History</Text>
+      <Text>You dont have any rides as Passenger yet!</Text>
     </View>
   )
 }
 
-export default History
+export default PassengerHistory
 
 const styles = StyleSheet.create({})
