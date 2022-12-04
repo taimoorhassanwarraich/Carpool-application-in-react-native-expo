@@ -28,6 +28,9 @@ const LiveLocation = ({navigation}) => {
       const loc = await Location.getCurrentPositionAsync({});
       const add = (await Location.reverseGeocodeAsync(loc.coords))
 
+      for (let item of add){
+      const address = `${item.name}, ${item.street}, ${item.postalCode}, ${item.city}, ${item.country}, `
+      }
       setLocation(loc);
       console.warn(loc)
       console.warn(add)
@@ -35,7 +38,6 @@ const LiveLocation = ({navigation}) => {
         setOrigin({
           lat: loc.coords.latitude,
           lng: loc.coords.longitude,
-          address: name,
         })
         );
     })();
@@ -49,7 +51,7 @@ const LiveLocation = ({navigation}) => {
 //   }
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>{JSON.stringify(address)}</Text>
+      <Text style={styles.paragraph}>{JSON.stringify(location)}</Text>
       <TouchableOpacity onPress={()=>navigation.navigate("SearchRide")}>
         <Text>Go To Maps</Text>
       </TouchableOpacity>

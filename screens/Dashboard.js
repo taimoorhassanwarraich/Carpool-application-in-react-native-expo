@@ -19,7 +19,7 @@ const Dashboard = ({ navigation }) => {
         <Drawer.Navigator drawerContent={props =><CustomDrawer {...props}/>}>
        
             <Drawer.Screen 
-            name ="HomeScreen" 
+            name ="Home" 
             component={TabNavigator} 
             options={{
                drawerIcon:()=>(

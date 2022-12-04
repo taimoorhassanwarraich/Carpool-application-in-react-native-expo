@@ -1,24 +1,25 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View , TextInput} from 'react-native'
+import React, {useEffect} from 'react'
+import {LiveLocation} from '../../components/Location/LiveLocation'
+import { useDispatch, useSelector } from 'react-redux'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-const RequestedRides = ({navigation}) => {
+const Rides = ({navigation}) => {
   return (
     <View style={styles.container}>
 
       <TouchableOpacity style={styles.btn} onPress={()=>{
-
-        navigation.navigate("LiveLocation")
+        navigation.navigate('Create Ride')
       }}>
-        <Ionicons name='add' style={styles.btntxt} size={50} onPress={()=>{navigation.navigate("LiveLocation")}}>
-          <Text style={{color:'black'}}>Search</Text>
+        <Ionicons name='add' style={styles.btntxt} size={50}>
+          <Text style={{color:'white'}}>Search</Text>
         </Ionicons>
       </TouchableOpacity>
     </View>
-  )
+  ) 
 }
 
-export default RequestedRides
+export default Rides
 
 const styles = StyleSheet.create({
   container:{

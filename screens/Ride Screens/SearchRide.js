@@ -20,16 +20,16 @@ const SearchRide = () => {
           styles={styles.mapSearchTextHolder}
           fetchDetails={true}
 
-          // onPress={(data, details = null) => {
-          //   console.log(details)
-          //   dispath(
-          //     setOrigin({
-          //       location: details.geometry.location,
-          //       description: data.description,
-          //     })
-          //     );
-          //     dispath(setDestination(null));
-          // }}
+          onPress={(data, details = null) => {
+            console.log(details)
+            dispath(
+              setOrigin({
+                location: details.geometry.location,
+                description: data.description,
+              })
+              );
+              dispath(setDestination(null));
+          }}
           returnKeyType={"search"}
           enablePoweredByContainer={false}
           minLenght={2}
@@ -92,7 +92,7 @@ const SearchRide = () => {
               longitude: origin.lng,
             }} 
             title="Origin"
-            description={origin.add}
+            description={origin.description}
             identifier='origin'
             />
         )}
@@ -126,10 +126,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 4,
     borderColor: 'black',
-    alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 30,
   },
   mapSearchTextHolder: {
     textInput: {
