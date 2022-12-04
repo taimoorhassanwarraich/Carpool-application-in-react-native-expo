@@ -1,11 +1,17 @@
 import { StyleSheet, Text, TouchableOpacity, View , TextInput} from 'react-native'
-import React from 'react'
+import React, {useEffect} from 'react'
+import {LiveLocation} from '../../components/Location/LiveLocation'
+import { useDispatch, useSelector } from 'react-redux'
+
 
 const Rides = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.btn} onPress={()=>navigation.navigate('SearchRide')}>
-        <Text style={styles.btntxt}> Search Ride</Text>
+
+      <TouchableOpacity style={styles.btn} onPress={()=>{
+        navigation.navigate("LiveLocation")
+      }}>
+        <Text style={styles.btntxt}> Search </Text>
       </TouchableOpacity>
     </View>
   ) 

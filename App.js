@@ -17,6 +17,7 @@ import Dashboard from './screens/Dashboard';
 import { authentication } from './firebase';
 import Chat from './screens/Message/Chat';
 import SearchRide from './screens/Ride Screens/SearchRide';
+import LiveLocation from './components/Location/LiveLocation';
 
 
 export default function App() {
@@ -45,7 +46,8 @@ export default function App() {
                   title: route.params.userName,
                   headerBackTitleVisible: false,
                 })} />
-                <Stack.Screen name='SearchRide' component={SearchRide} />
+                <Stack.Screen name='SearchRide' component={SearchRide} options={{}} />
+                <Stack.Screen name='LiveLocation' component={LiveLocation} options={{ headerShown: false }} />
               </Stack.Navigator>
               :
               <Stack.Navigator>
