@@ -12,7 +12,7 @@ import RegistrationScreen from './screens/Authentication/RegistrationScreen';
 import { useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import "@react-native-async-storage/async-storage"
-import CompleteRegistration from './screens/Authentication/CompleteRegistration';
+import Basic from './screens/Authentication/Basic';
 import Dashboard from './screens/Dashboard';
 import { authentication } from './firebase';
 import Chat from './screens/Message/Chat';
@@ -21,6 +21,10 @@ import LiveLocation from './components/Location/LiveLocation';
 import CreateRide from './screens/Ride Screens/CreateRide';
 import DocVerification from './screens/Authentication/DocVerification';
 import ForgotPassword from './screens/Authentication/ForgotPassword';
+import DriverRegistration from './screens/Authentication/DriverRegistration';
+import License from './screens/Verification Screens/License';
+import Cnic from './screens/Verification Screens/Cnic';
+import Vehicle from './screens/Verification Screens/Vehicle';
 
 
 export default function App() {
@@ -44,16 +48,17 @@ export default function App() {
               ?
               <Stack.Navigator>
                 <Stack.Screen name='Dashboard' component={Dashboard} options={{ headerShown: false }} />
-                <Stack.Screen name='CompleteRegistration' component={CompleteRegistration} options={{ headerShown: false }} />
-                <Stack.Screen name='Chat' component={Chat} options={({ route }) => ({
-                  title: route.params.userName,
-                  headerBackTitleVisible: false,
-                })} />
+                <Stack.Screen name='Chat' component={Chat} options={({ route }) => ({title: route.params.userName,headerBackTitleVisible: false,})} />
                 <Stack.Screen name='SearchRide' component={SearchRide} options={{}} />
                 <Stack.Screen name='LiveLocation' component={LiveLocation} options={{ headerShown: false }} />
                 <Stack.Screen name='Create Ride' component={CreateRide} options={{ headerShown: true }} />
                 <Stack.Screen name='Doc Verification' component={DocVerification} options={{ headerShown: true }} />
                 <Stack.Screen name='Forget Password' component={ForgotPassword} options={{}} />
+                <Stack.Screen name='Driver Registration' component={DriverRegistration} options={{}} />
+                <Stack.Screen name='License' component={License} options={{}} />
+                <Stack.Screen name='Basic' component={Basic} />
+                <Stack.Screen name='CNIC' component={Cnic} />
+                <Stack.Screen name='Vehicle' component={Vehicle} />
               </Stack.Navigator>
               :
               <Stack.Navigator>

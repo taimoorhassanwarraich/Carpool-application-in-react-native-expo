@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar, TextInput, TouchableOpacity } from 'react-native';
-import { doc, setDoc, addDoc, collection} from "firebase/firestore";
+import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar, TextInput, TouchableOpacity, View, Image } from 'react-native';
+import { doc, setDoc, addDoc, collection } from "firebase/firestore";
 import { authentication, db } from '../../firebase';
 import "@react-native-async-storage/async-storage";
 import { sendPasswordResetEmail } from 'firebase/auth';
 
 
-const CompleteRegistration = ({navigation}) => {
+const Basic = ({ navigation }) => {
 
     const id = authentication.currentUser.uid
     const [fullName, setFullName] = useState('');
@@ -20,17 +20,17 @@ const CompleteRegistration = ({navigation}) => {
         age: age,
         phone: phone,
         email: email,
-        gender : gender,
-        
-      };
+        gender: gender,
 
-      function sendData() {
-         setDoc(doc(db, "users", id), Data)
-         .then(()=>{
-            navigation.navigate("Dashboard")
-         })
-      }
-      
+    };
+
+    function sendData() {
+        setDoc(doc(db, "users", id), Data)
+            .then(() => {
+                navigation.navigate("Dashboard")
+            })
+    }
+
 
     // function SendData(){
     //     const id = authentication.currentUser.uid
@@ -62,19 +62,23 @@ const CompleteRegistration = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView}>
+            <View style={styles.scrollView}>
+                <Image
+                    style={styles.img}
+                    source={require("../../src/assets/Images/ProfileImage.webp")} />
+                <TouchableOpacity style={styles.imgbtn}>
+                    <Text style={{color:'blue'}}>
+                        Add a Photo 
+                    </Text>
+                </TouchableOpacity>
                 <Text style={styles.label}>
-                    Full Name
+                    Full Name 
                 </Text>
                 <TextInput style={styles.input} value={fullName} onChangeText={text => setFullName(text)} />
                 <Text style={styles.label}>
                     Date Of Birth
                 </Text>
                 <TextInput style={styles.input} value={age} onChangeText={text => setAge(text)} />
-                <Text style={styles.label}>
-                    Phone Number
-                </Text>
-                <TextInput style={styles.input} value={phone} onChangeText={text => setPhone(text)} />
                 <Text style={styles.label}>
                     Email
                 </Text>
@@ -83,10 +87,10 @@ const CompleteRegistration = ({navigation}) => {
                     Gender
                 </Text>
                 <TextInput style={styles.input} value={gender} onChangeText={text => setGender(text)} />
-                <TouchableOpacity onPress={sendData}>
-                    <Text>Submit</Text>
-                </TouchableOpacity>
-            </ScrollView>
+            </View>
+            <TouchableOpacity onPress={sendData} style={styles.btn}>
+                <Text style={styles.btntxt}>Submit</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 };
@@ -94,24 +98,60 @@ const CompleteRegistration = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: StatusBar.currentHeight,
+        justifyContent: 'flex-start',
+        
+    },
+    img: {
+        height: 90,
+        width: 90,
+        borderRadius: 50,
+        alignSelf: 'center',
+        margin: 10
+    },
+    imgbtn: {
+        borderColor: 'blue',
+        height: 40,
+        width: 200,
+        borderWidth: 0.5,
+        alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 25
     },
     scrollView: {
-        backgroundColor: 'lightblue',
-        marginHorizontal: 20,
+        backgroundColor: 'white',
+        margin: 10,
+        borderRadius:15
     },
     input: {
         backgroundColor: 'white',
         height: 50,
         margin: 15,
         marginTop: 5,
-        borderRadius: 15,
+        borderRadius: 10,
+        borderWidth: 0.5,
     },
     label: {
         fontSize: 16,
-        margin: 10,
-        fontWeight: 'bold'
-    }
+        margin: 3,
+        fontWeight: '500',
+        marginLeft:15
+    },
+    btn: {
+        backgroundColor: 'blue',
+        height: 60,
+        width: 250,
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 30
+    },
+    btntxt: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 18
+    },
+
 });
 
-export default CompleteRegistration;
+export default Basic;

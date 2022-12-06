@@ -4,7 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import RideCard from './RideCard'
 
-const RequestedRides = ({navigation}) => {
+const Rides = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={{flex:0}}>
@@ -15,7 +15,7 @@ const RequestedRides = ({navigation}) => {
       <TouchableOpacity  onPress={()=>{
         navigation.navigate("LiveLocation")
       }}>
-        <FontAwesome5 name='search-location' color='white' size={40} onPress={()=>{navigation.navigate("LiveLocation")}}/>
+        <FontAwesome5 name='search-location' color='white' size={40} onPress={()=>{navigation.navigate("Basic")}}/>
         <Text style={{color:'white'}}> Search Ride</Text>
       </TouchableOpacity>
       </View>
@@ -24,7 +24,7 @@ const RequestedRides = ({navigation}) => {
   )
 }
 
-export default RequestedRides
+export default Rides
 
 const styles = StyleSheet.create({
   container:{

@@ -21,35 +21,22 @@ const DocVerification = ({ navigation }) => {
     ]
     return (
 
-        <SafeAreaView style={styles.mainContainer}>
-            <View style={{flex:0.8, justifyContent:'space-evenly'}}>
-                <SwitchSelector
-                    style={styles.selector}
-                    options={options}
-                    initial={0}
-                    fontWeight='bold'
-                    onPress=
-                    {(value) => setVehicleType("value")
-                    }
-                />
+        <View style={styles.mainContainer}>
+            
+            <View style={styles.card}>
                 <SelectList
-                placeholder='Company'
+                placeholder='Type'
                     setSelected={(val) => setVehicleType(val)}
                     data={data}
                     onSelect={() => alert(selected)}
                     save="value"
                     label= "Select Model"
+                    inputStyles={{fontSize:18}} boxStyles={{backgroundColor:'white', borderColor:'white', margin:5, borderBottomWidth:1}}
                 />
                 <SelectList
-                placeholder='Model'
-                    setSelected={(val) => setVehicleType(val)}
-                    data={data}
-                    onSelect={() => alert(selected)}
-                    save="value"
-                    label= "Select Model"
-                />
-                <SelectList
-                placeholder='Year'
+                placeholder='Number Plate'
+                inputStyles={{fontSize:18}}
+                boxStyles={{backgroundColor:'white', borderColor:'white', margin:5, borderBottomWidth:1}}
                     setSelected={(val) => setVehicleType(val)}
                     data={data}
                     onSelect={() => alert(selected)}
@@ -58,32 +45,38 @@ const DocVerification = ({ navigation }) => {
                 />
                 <SelectList
                 placeholder='Engine'
+                inputStyles={{fontSize:18}}
+                boxStyles={{backgroundColor:'white', borderColor:'white', margin:5, borderBottomWidth:1}}
                     setSelected={(val) => setVehicleType(val)}
                     data={data}
                     onSelect={() => alert(selected)}
                     save="value"
                     label= "Select Model"
                 />
+
                 <View style={{flexDirection:'row'}}>
-                <TouchableOpacity style={styles.btn}>
-                    <AntDesign name='idcard' size={50}></AntDesign>
-                    <Text style={{fontSize:15, color:'black', fontWeight:'bold'}}>
-                        Upload Your CNIC picture
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btn}>
-                    <Ionicons name='cloud-upload' size={50}></Ionicons>
-                    <Text style={{fontSize:15, color:'black', fontWeight:'bold'}}>
-                        Upload Your Vehicle Images
-                    </Text>
-                </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.uploadbtn}>
+                        <AntDesign name='idcard' size={50} color='blue'/>
+                        <Text style={{fontSize:15, color:'black', fontWeight:'bold'}}>
+                         Upload Your Vehicle Registration picture
+                      </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.uploadbtn}>
+                         <Ionicons name='cloud-upload' size={50} color='blue'></Ionicons>
+                         <Text style={{fontSize:15, color:'black', fontWeight:'bold'}}>
+                             Upload Your Vehicle Images
+                         </Text>
+                    </TouchableOpacity>
+
                 </View>
                 
             </View>
             <TouchableOpacity style={styles.submitbtn}>
-                    <Text style={{color:'white', fontWeight:'bold', alignSelf:'center', fontSize:20}}>Submit</Text>
+                    <Text style={{color:'blue', fontWeight:'500', alignSelf:'center', fontSize:20}}>Submit</Text>
             </TouchableOpacity>
-        </SafeAreaView>
+        </View>
     )
 }
 
@@ -92,28 +85,37 @@ export default DocVerification
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
-        alignItems: 'center',
     },
-    selector: {
-        width: 350,
-        margin: 10,
-
-    },
-    btn:{
+    card: { 
+        justifyContent:'space-evenly',
+        backgroundColor:'white',
+        margin:10,
+        borderRadius:5,
+        padding:10
+        },
+    uploadbtn:{
         justifyContent:'center',
-        backgroundColor:'lightblue',
         height:100,
         width:150,
         alignSelf:'center',
         alignItems:'center',
-        marginLeft:25
+        borderWidth:1,
+        borderColor:'blue',
+        borderRadius:15,
+        margin:5
     },
     submitbtn:{
-        height:50,
-        backgroundColor:'blue',
+        height:70,
         width:200,
-        borderRadius:30,
-        justifyContent:'center'
+        borderRadius:40,
+        justifyContent:'center',
+        borderWidth:1,
+        borderColor:'blue',
+        alignSelf:'center',
+        margin:10,
+        backgroundColor:'white',
+        marginTop:30
+
     }
 
 })

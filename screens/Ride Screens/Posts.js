@@ -14,8 +14,8 @@ const Posts = ({navigation}) => {
       <RideCard/>
       </View>
       <View style={styles.btn}>
-      <TouchableOpacity onPress={()=>{navigation.navigate("Create Ride")}}>
-        <MaterialIcons name='add-location-alt' color='white' size={50} onPress={()=>{navigation.navigate("Create Ride")}}/>
+      <TouchableOpacity onPress={navigation.navigate('Create Ride')}>
+        <MaterialIcons name='add-location-alt' color='white' size={50}/>
         <Text style={{color:'white'}}>Post Ride</Text>
       </TouchableOpacity>
       </View>

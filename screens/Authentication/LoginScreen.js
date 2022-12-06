@@ -29,10 +29,6 @@ const LoginScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.btn} onPress={Login_Handle}>
                 <Text style={styles.btntext}>Log In</Text>
             </TouchableOpacity>
-            <View style={{ flexDirection: 'row', marginTop:10 }}>
-                <Text> Do Not Have Account?</Text>
-                <Text style={{ color: 'blue'}} onPress={()=>navigation.navigate("Forget Password")}> Register</Text>
-            </View>
         </View>
     )
 }

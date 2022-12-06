@@ -46,7 +46,7 @@ const CreateRide = ({navigation}) => {
         <Text style={{fontWeight:'bold', color:'white', fontSize:18}}>Confirm</Text>
       </TouchableOpacity>
       :
-      <TouchableOpacity style={styles.searchbtn} onPress={()=>{navigation.navigate("Doc Verification")}}>
+      <TouchableOpacity style={styles.searchbtn} onPress={navigation.navigate('Driver Registration')}>
         <Text style={{fontWeight:'bold', color:'white', fontSize:18}}>Confirm</Text>
       </TouchableOpacity>
     }
