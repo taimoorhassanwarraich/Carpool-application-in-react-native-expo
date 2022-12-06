@@ -111,7 +111,7 @@ const SearchRide = () => {
           />
         )}
       </MapView>
-      </SafeAreaView>
+      </SafeAreaView> 
     </View>
   )
 }

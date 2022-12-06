@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, } f
 import React, { useState } from 'react';
 import { authentication } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-
 const LoginScreen = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
@@ -30,6 +29,10 @@ const LoginScreen = ({ navigation }) => {
             <TouchableOpacity style={styles.btn} onPress={Login_Handle}>
                 <Text style={styles.btntext}>Log In</Text>
             </TouchableOpacity>
+            <View style={{ flexDirection: 'row', marginTop:10 }}>
+                <Text> Do Not Have Account?</Text>
+                <Text style={{ color: 'blue'}} onPress={()=>navigation.navigate("Forget Password")}> Register</Text>
+            </View>
         </View>
     )
 }

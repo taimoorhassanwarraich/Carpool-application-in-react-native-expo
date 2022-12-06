@@ -20,6 +20,7 @@ import SearchRide from './screens/Ride Screens/SearchRide';
 import LiveLocation from './components/Location/LiveLocation';
 import CreateRide from './screens/Ride Screens/CreateRide';
 import DocVerification from './screens/Authentication/DocVerification';
+import ForgotPassword from './screens/Authentication/ForgotPassword';
 
 
 export default function App() {
@@ -52,6 +53,7 @@ export default function App() {
                 <Stack.Screen name='LiveLocation' component={LiveLocation} options={{ headerShown: false }} />
                 <Stack.Screen name='Create Ride' component={CreateRide} options={{ headerShown: true }} />
                 <Stack.Screen name='Doc Verification' component={DocVerification} options={{ headerShown: true }} />
+                <Stack.Screen name='Forget Password' component={ForgotPassword} options={{}} />
               </Stack.Navigator>
               :
               <Stack.Navigator>

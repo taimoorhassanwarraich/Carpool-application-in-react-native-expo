@@ -4,7 +4,7 @@ import { authentication } from '../../firebase'
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
 
 
-const ForgotPassword = () => {
+const ForgotPassword = ({navigation}) => {
 
 
 const user = authentication.currentUser;    
