@@ -4,14 +4,15 @@ import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import SignOut from '../screens/Authentication/SignOut'
+import { primary } from '../style/styles'
 
 
 const CustomDrawer = (props) => {
     return (
         <View style={{ flex: 1 }}>
-            <DrawerContentScrollView {...props} contentContainerStyle={{ backgroundColor: 'blue' }}>
+            <DrawerContentScrollView {...props} contentContainerStyle={{ backgroundColor: primary }} >
                 <ImageBackground >
-                    <Image source={require('../src/assets/Images/ProfileImage.webp')} style={styles.image_bg} />
+                    <Image source={require('../src/assets/Images/Saad-dp.png')} style={styles.image_bg} />
                 </ImageBackground>
                 <View style={{ flexDirection: 'row' }}>
                     <Text style={styles.txt}> Saad Shafqat</Text>
@@ -24,13 +25,13 @@ const CustomDrawer = (props) => {
             <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: '#ccc' }}>
                 <TouchableOpacity style={{ paddingVertical: 15 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Ionicons name='share-social-outline' size={28}></Ionicons>
+                        <Ionicons name='share-social-outline' size={28} color={primary}></Ionicons>
                         <Text style={{paddingVertical:5, fontSize: 17}}>Tell a Friend</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity  onPress={SignOut} style={{paddingVertical:15}}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Ionicons name='exit-outline' size={28} />
+                        <Ionicons name='exit-outline' size={28} color={primary}/>
                         <Text style={{ paddingVertical:5, fontSize: 17 }}>
                             Sign Out
                         </Text>

@@ -1,22 +1,26 @@
 import { SafeAreaView, ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native'
 import React, {useState} from 'react'
+import { primary } from '../../style/styles'
 
 const Settings = () => {
   return (
-    <SafeAreaView style={styles.mainContainer}>
-    <ScrollView>
+    <View style={styles.mainContainer}>
+    <SafeAreaView>
+    <ScrollView style={{backgroundColor:'white', borderRadius:20}}> 
       <BtnCard></BtnCard>
       <BtnCard1></BtnCard1> 
       <BtnCard2></BtnCard2>
       <BtnCard3></BtnCard3>
       <BtnCard4></BtnCard4>
     </ScrollView>
-    <TouchableOpacity style={{backgroundColor:'white', width:200, height:60, justifyContent:'center', alignItems:'center', borderRadius:7, alignSelf:'center', marginBottom:50}}>
-      <Text style={{fontWeight:'bold', color:'red'}}>
-        Delete My Accounts
+    
+    </SafeAreaView>
+    <TouchableOpacity style={{backgroundColor:primary, width:200, height:60, justifyContent:'center', alignItems:'center', borderRadius:35, alignSelf:'center', marginTop:50}}>
+      <Text style={{fontWeight:'500', color:'white', fontSize:16}}>
+        Delete My Account
       </Text>
     </TouchableOpacity>
-    </SafeAreaView>
+    </View>
   )
 }
 
@@ -72,25 +76,27 @@ export default Settings
 const styles = StyleSheet.create({
   card:{
     flex:1,
-    height:70,
+    height:60,
     backgroundColor:'white',
-    padding:20,
-    margin:5,
+    padding:10,
+    margin:3,
     borderRadius:5,
     flexDirection:'row',
+    borderBottomWidth:1,
+    justifyContent:'space-between'
   },
   cardtxt:{
     color:'black',
-    fontWeight:'bold',
+    fontWeight:'500',
     fontSize:18,
     
   },
   switch:{
     backgroundColor:'white',
-    marginLeft:200
   },
   mainContainer:{
     flex:1,
-    backgroundColor:'lightblue'
+    margin:15, 
+    borderRadius:15
   }
 })

@@ -3,8 +3,12 @@ import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import RideCard from './RideCard'
+import { primary } from '../../style/styles'
 
 const Posts = ({navigation}) => {
+  const toRegistration =()=>{
+    navigation.navigate('Create Ride')
+  }
   return (
     <View style={styles.container}>
       <View style={{flex:0}}>
@@ -13,12 +17,9 @@ const Posts = ({navigation}) => {
       <RideCard/>
       <RideCard/>
       </View>
-      <View style={styles.btn}>
-      <TouchableOpacity onPress={navigation.navigate('Create Ride')}>
-        <MaterialIcons name='add-location-alt' color='white' size={50}/>
-        <Text style={{color:'white'}}>Post Ride</Text>
+      <TouchableOpacity onPress={toRegistration} style={styles.btn}>
+        <MaterialIcons name='add-location-alt' color={'white'} size={50}/>
       </TouchableOpacity>
-      </View>
 
     </View>
   )
@@ -33,15 +34,17 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   btn:{
-    backgroundColor:'blue',
+    backgroundColor:primary,
     height:100,
     width:100,
     alignItems:'center',
     justifyContent:'center',
-    marginBottom:5,
-    marginLeft:200,
-    borderRadius:50
-
+    margin:15,
+    borderRadius:50,
+    alignSelf:'flex-end',
+    position:'absolute',
+    right:20,
+    bottom:20
   },
   btntxt:{
     color:'white',

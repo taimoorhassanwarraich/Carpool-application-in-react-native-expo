@@ -13,6 +13,7 @@ import Settings from './Setting/Settings';
 import FontAwesome from'react-native-vector-icons/FontAwesome'
 import AntDesign from'react-native-vector-icons/AntDesign'
 import TabNavigator from '../Navigations/TabNavigator';
+import { primary } from '../style/styles';
 
 const Dashboard = ({ navigation }) => {
     return (
@@ -23,41 +24,41 @@ const Dashboard = ({ navigation }) => {
             component={TabNavigator} 
             options={{
                drawerIcon:()=>(
-                <Ionicons name='home-outline' size={22}  />
+                <Ionicons name='home-outline' size={22} color={primary} />
 
                )
             }}/>
             <Drawer.Screen name="Profile" component={Profile} 
             options={{
                 drawerIcon:()=>(
-                 <Ionicons name='person-outline' size={22}  />
+                 <Ionicons name='person-outline' size={22}  color={primary}/>
  
                 )
              }}/> 
              <Drawer.Screen name="Messages" component={Messages}
              options={{
                 drawerIcon:()=>(
-                 <Ionicons name='chatbox-ellipses-outline' size={22}  />
+                 <Ionicons name='chatbox-ellipses-outline' size={22}  color={primary}/>
  
                 )
              }} />
             <Drawer.Screen name="History" component={History} 
             options={{
                 drawerIcon:()=>(
-                 <FontAwesome name='history' size={22}  />
+                 <FontAwesome name='history' size={22} color={primary} />
  
                 )
              }}/> 
             <Drawer.Screen name="Settings" component={Settings} 
             options={{
                 drawerIcon:()=>(
-                 <Ionicons name='settings-outline' size={22} />
+                 <Ionicons name='settings-outline' size={22} color={primary}/>
                 )
              }}/>
              <Drawer.Screen name="About" component={About} 
             options={{
                 drawerIcon:()=>(
-                 <AntDesign name='info' size={22}  />
+                 <AntDesign name='info' size={22} color={primary} />
                 )
              }}/>
         

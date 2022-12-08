@@ -5,6 +5,7 @@ import { getDoc, doc, query, onSnapshot, collection } from 'firebase/firestore'
 import  FontAwesome  from 'react-native-vector-icons/FontAwesome'
 import { ProgressBar, MD3Colors } from 'react-native-paper';
 import  Ionicons  from 'react-native-vector-icons/Ionicons'
+import { primary } from '../../style/styles';
 
 const Profile = ({ navigation }) => {
     const [user, setUser] = useState([]);
@@ -15,14 +16,9 @@ const Profile = ({ navigation }) => {
 
         <View style={styles.profile}>
 
-            <Image source ={require('../../src/assets/Images/ProfileImage.webp')} style={styles.profile_image}/>
-
-            <View style={{flexDirection:'column'}}>
+            <Image source ={require('../../src/assets/Images/Saad-dp.png')} style={styles.profile_image}/>
             <Text style={styles.name_txt}> Saad Shafqat</Text>
-            <Text> +92 3xx xxxxxxx</Text>
-            </View>
-
-            <FontAwesome name='edit' style={styles.edit_icon} ></FontAwesome>
+            <Text style={{color:primary}}>Saadshafqat@gmail.com</Text>
         
         </View>
 
@@ -33,7 +29,7 @@ const Profile = ({ navigation }) => {
             <Card3/>
         </View>
         <TouchableOpacity style={styles.btn}>
-                <Text style={{fontSize:18, fontWeight:'500', color:'blue'}}>
+                <Text style={{fontSize:20, fontWeight:'500', color:'white'}}>
                     Save
                 </Text>
             </TouchableOpacity>
@@ -50,15 +46,13 @@ export default Profile
 const styles = StyleSheet.create({
     btn:{
         alignSelf:'center',
-        backgroundColor:'white',
+        backgroundColor:primary,
         height:60,
         width:200,
         alignItems:'center', 
         justifyContent:'center', 
         marginTop:15, 
         borderRadius:35,
-        borderWidth:1,
-        borderColor:'blue'
     },
     container:{
         flex:1
@@ -67,9 +61,9 @@ const styles = StyleSheet.create({
         backgroundColor:'white',
         borderRadius:25,
         margin:15,
-        flexDirection:'row',
         justifyContent:'flex-start',
-        alignItems:'center'
+        alignItems:'center',
+        padding:10
     },
     edit_profile:{
         backgroundColor:'white',
@@ -108,7 +102,7 @@ const styles = StyleSheet.create({
     },
     icon:{
         padding:10,
-        color:'blue'
+        color:primary
     },
     txt:{
         fontWeight:'500',
@@ -134,12 +128,12 @@ function Card(){
     return(
         <TouchableOpacity style={styles.cards}>
                   
-                    <Ionicons style={styles.icon} name='mail' size={35}></Ionicons>
+                    <Ionicons style={styles.icon} name='mail' color={primary} size={35}></Ionicons>
                     <View style={{alignSelf:'center'}}>                 
                       <Text style={styles.txt}>Email</Text>
                       <Text>saadshafqat@gmail.com</Text>
                     </View>
-                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:'blue', marginLeft:80}} size={28} ></FontAwesome>  
+                    <FontAwesome name='edit' color={primary} style={{alignSelf:'center', marginRight:10, color:primary, marginLeft:80}} size={28} ></FontAwesome>  
             </TouchableOpacity>
     )
 }
@@ -147,12 +141,12 @@ function Card1(){
     return(
         <TouchableOpacity style={styles.cards}>
                   
-                    <Ionicons style={styles.icon} name='mail' size={35}></Ionicons>
+                    <Ionicons style={styles.icon} name='home' size={35}></Ionicons>
                     <View style={{alignSelf:'center'}}>                 
                       <Text style={styles.txt}>Address</Text>
                       <Text>Street 3,G-6/3,Islamabad</Text>
                     </View>
-                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:'blue', marginLeft:80}} size={28} ></FontAwesome>  
+                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:primary, marginLeft:80}} size={28} ></FontAwesome>  
             </TouchableOpacity>
     )
 }
@@ -164,7 +158,7 @@ function Card2(){
                       <Text style={styles.txt}>CNIC</Text>
                       <Text>35123-987654321031-5</Text>
                     </View>
-                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:'blue', marginLeft:80}} size={28} ></FontAwesome>  
+                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:primary, marginLeft:80}} size={28} ></FontAwesome>  
             </TouchableOpacity>
     )
 }
@@ -176,7 +170,7 @@ function Card3(){
                       <Text style={styles.txt}>CNIC</Text>
                       <Text>35123-987654321031-5</Text>
                     </View>
-                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:'blue', marginLeft:80}} size={28} ></FontAwesome>  
+                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:primary, marginLeft:80}} size={28} ></FontAwesome>  
             </TouchableOpacity>
     )
 }

@@ -17,23 +17,23 @@ const Messages_data = [
   {
     id: '1',
     userName: 'Taimoor Hassan',
-    userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
+    userImg: require('../../src/assets/Images/Taimoor-pic.png'),
     messageTime: '4 mins ago',
     messageText:
       'Hey there, I will be at pickup point in 3 minutes.',
   },
   {
     id: '2',
-    userName: 'Abdullah',
-    userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
+    userName: 'Muhammad Saad',
+    userImg: require('../../src/assets/Images/Ch-pic.png'),
     messageTime: '2 hours ago',
     messageText:
       'I will pick you up at 8.30am sharp',
   },
   {
     id: '3',
-    userName: 'Shoaib Tariq',
-    userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
+    userName: 'Hammad',
+    userImg: require('../../src/assets/Images/Cr-pic.png'),
     messageTime: '1 hours ago',
     messageText:
       'I will be late by five minutes',
@@ -41,15 +41,15 @@ const Messages_data = [
   {
     id: '4',
     userName: 'Hamad Sindhi',
-    userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
+    userImg: require('../../src/assets/Images/Hammad-pic.png'),
     messageTime: '1 day ago',
     messageText:
       'It was nice sharing ride with you',
   },
   {
     id: '5',
-    userName: 'Muhammad Saad',
-    userImg: require('/Users/imac/Desktop/react/Humsawar-expo/src/assets/Images/ProfileImage.webp'),
+    userName: 'Sir Tariq',
+    userImg: require('../../src/assets/Images/Sir-Tariq-pic.png'),
     messageTime: '2 days ago',
     messageText:
       'Hope to see you again!',

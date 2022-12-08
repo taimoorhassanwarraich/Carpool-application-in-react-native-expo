@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+import { primary } from '../../style/styles';
 
 const License = ({navigation}) => {
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -37,7 +38,7 @@ const License = ({navigation}) => {
       <Text style={styles.label}>Picture of License</Text>
       <FontAwesome name='drivers-license-o' size={100} style={{alignSelf:'center'}}/>
           <TouchableOpacity style={styles.btn}>
-                <Text style={{color: 'blue',fontWeight: '500',fontSize: 18}}>Upload</Text>
+                <Text style={{color: 'white',fontWeight: '500',fontSize: 20}}>Upload</Text>
             </TouchableOpacity>
       </View>
 
@@ -47,7 +48,7 @@ const License = ({navigation}) => {
       <TextInput placeholder={'Select Date'} style={styles.datepicker} placeholderTextColor='black' onPressOut={showDatePicker} editable={false} value={date}></TextInput>
       </View>
       <TouchableOpacity style={styles.btn}>
-                <Text style={{color: 'blue',fontWeight: '500',fontSize: 18}}>Save</Text>
+                <Text style={{color: 'white',fontWeight: '500',fontSize: 20}}>Save</Text>
             </TouchableOpacity>
     </View>
   )
@@ -86,7 +87,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 30,
         marginTop:30,
-        borderWidth:1
+        borderWidth:1,
+        backgroundColor:primary
     },
     datepicker:{
         backgroundColor:'white',

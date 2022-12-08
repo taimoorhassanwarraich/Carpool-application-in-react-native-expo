@@ -15,7 +15,7 @@ const Vehicle = ({navigation}) => {
         
         <TouchableOpacity style={styles.btncard} >
                 <Text style={styles.btntxt}>
-                    Driver License
+                Number Plate
                 </Text>
                 <Ionicons name='arrow-forward' size={20}></Ionicons>
             </TouchableOpacity><TouchableOpacity style={styles.btncard} >

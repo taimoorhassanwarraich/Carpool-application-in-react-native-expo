@@ -4,6 +4,7 @@ import { doc, setDoc, addDoc, collection } from "firebase/firestore";
 import { authentication, db } from '../../firebase';
 import "@react-native-async-storage/async-storage";
 import { sendPasswordResetEmail } from 'firebase/auth';
+import { primary } from '../../style/styles';
 
 
 const Basic = ({ navigation }) => {
@@ -62,32 +63,25 @@ const Basic = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.scrollView}>
+            <View style={{backgroundColor:'white', margin:10, borderRadius:5, padding:10}}>
                 <Image
                     style={styles.img}
                     source={require("../../src/assets/Images/ProfileImage.webp")} />
                 <TouchableOpacity style={styles.imgbtn}>
-                    <Text style={{color:'blue'}}>
+                    <Text style={{color:primary}}>
                         Add a Photo 
                     </Text>
                 </TouchableOpacity>
-                <Text style={styles.label}>
-                    Full Name 
-                </Text>
-                <TextInput style={styles.input} value={fullName} onChangeText={text => setFullName(text)} />
-                <Text style={styles.label}>
-                    Date Of Birth
-                </Text>
-                <TextInput style={styles.input} value={age} onChangeText={text => setAge(text)} />
-                <Text style={styles.label}>
-                    Email
-                </Text>
-                <TextInput style={styles.input} value={email} onChangeText={text => setEmail(text)} />
-                <Text style={styles.label}>
-                    Gender
-                </Text>
-                <TextInput style={styles.input} value={gender} onChangeText={text => setGender(text)} />
             </View>
+
+            <View style={styles.scrollView}>
+                <TextInput style={styles.input} value={fullName} onChangeText={text => setFullName(text)} placeholder='Full Name' placeholderTextColor={'black'}/>
+
+                <TextInput style={styles.input} value={age} onChangeText={text => setAge(text)} placeholder='Date Of Birth' placeholderTextColor={'black'}/>
+
+                <TextInput style={styles.input} value={email} onChangeText={text => setEmail(text)} placeholder='Email' placeholderTextColor={'black'} />
+            </View>
+
             <TouchableOpacity onPress={sendData} style={styles.btn}>
                 <Text style={styles.btntxt}>Submit</Text>
             </TouchableOpacity>
@@ -106,10 +100,11 @@ const styles = StyleSheet.create({
         width: 90,
         borderRadius: 50,
         alignSelf: 'center',
-        margin: 10
+        margin: 10,
+        backgroundColor:'white'
     },
     imgbtn: {
-        borderColor: 'blue',
+        borderColor: primary,
         height: 40,
         width: 200,
         borderWidth: 0.5,
@@ -129,27 +124,23 @@ const styles = StyleSheet.create({
         margin: 15,
         marginTop: 5,
         borderRadius: 10,
-        borderWidth: 0.5,
-    },
-    label: {
-        fontSize: 16,
-        margin: 3,
-        fontWeight: '500',
-        marginLeft:15
+        borderBottomWidth: 0.5,
+        padding:5
     },
     btn: {
-        backgroundColor: 'blue',
+        backgroundColor: primary,
         height: 60,
         width: 250,
         alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 30
+        borderRadius: 30,
+        marginTop:20
     },
     btntxt: {
         color: 'white',
-        fontWeight: 'bold',
-        fontSize: 18
+        fontWeight: '500',
+        fontSize: 20
     },
 
 });

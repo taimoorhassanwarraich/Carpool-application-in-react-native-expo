@@ -1,18 +1,19 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView } from 'react-native'
 import React, {useState} from 'react'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import { primary } from '../../style/styles'
 
-const Cnic = () => {
+const Cnic = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
 
       <View style={styles.cards}>
 
         <Text style={styles.label}>CNIC ( Front Side)</Text>
-        <FontAwesome name='id-card' size={150} style={{alignSelf:'center'}}/>
+        <FontAwesome name='id-card' size={100} style={{alignSelf:'center'}}/>
 
-      <TouchableOpacity style={styles.btn}>
-                <Text style={{color: 'blue',fontWeight: '500',fontSize: 18}}>Upload</Text>
+      <TouchableOpacity style={styles.uploadbtn}>
+                <Text style={{color: primary,fontWeight: '500',fontSize: 18}}>Upload</Text>
         </TouchableOpacity>
 
       </View>
@@ -21,15 +22,15 @@ const Cnic = () => {
 
       <Text style={styles.label}>CNIC (Back Side)</Text>
       <FontAwesome name='drivers-license-o' size={100} style={{alignSelf:'center'}}/>
-          <TouchableOpacity style={styles.btn}>
-                <Text style={{color: 'blue',fontWeight: '500',fontSize: 18}}>Upload</Text>
+          <TouchableOpacity style={styles.uploadbtn}>
+                <Text style={{color: primary,fontWeight: '500',fontSize: 18}}>Upload</Text>
             </TouchableOpacity>
       </View>
 
         <TouchableOpacity style={styles.btn}>
-                <Text style={{color: 'blue',fontWeight: '500',fontSize: 18}}>Save</Text>
+                <Text style={{color: 'white',fontWeight: '500',fontSize: 20}}>Save</Text>
         </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   )
 }
 
@@ -66,7 +67,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 30,
         marginTop:30,
-        borderWidth:1
+        borderWidth:1,
+        backgroundColor:primary
     },
     datepicker:{
         backgroundColor:'white',
@@ -76,5 +78,16 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderRadius:30,
         margin:3,
+    },
+    uploadbtn:{
+      height:50,
+      width:250,
+      alignSelf:'center',
+      justifyContent:'center',
+      alignItems:'center',
+      borderRadius:30,
+      borderWidth:1,
+      borderColor:primary,
+      margin:10
     }
 })
