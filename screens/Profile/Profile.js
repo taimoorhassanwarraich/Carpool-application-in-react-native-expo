@@ -11,28 +11,33 @@ const Profile = ({ navigation }) => {
 
     return (
         <>
+        <View style={styles.container}>
+
         <View style={styles.profile}>
+
             <Image source ={require('../../src/assets/Images/ProfileImage.webp')} style={styles.profile_image}/>
+
             <View style={{flexDirection:'column'}}>
             <Text style={styles.name_txt}> Saad Shafqat</Text>
-            <Text style={{color:'white'}}> +92 3xx xxxxxxx</Text>
+            <Text> +92 3xx xxxxxxx</Text>
             </View>
+
             <FontAwesome name='edit' style={styles.edit_icon} ></FontAwesome>
-            
+        
         </View>
 
-        <ScrollView style ={styles.edit_profile}>
+        <View style ={styles.edit_profile}>
             <Card/>
             <Card1/>
             <Card2/>
             <Card3/>
-            <TouchableOpacity style={{alignSelf:'center', backgroundColor:'white', height:50, width:120, alignItems:'center', justifyContent:'center', marginTop:15, borderRadius:15}}>
-                <Text>Save</Text>
+        </View>
+        <TouchableOpacity style={styles.btn}>
+                <Text style={{fontSize:18, fontWeight:'500', color:'blue'}}>
+                    Save
+                </Text>
             </TouchableOpacity>
-        </ScrollView>
-        
-        <ProgressBar progress={0.3} color='blue' style={{height:10, marginBottom:60}}/>
-        
+        </View>
         
         
         </>
@@ -43,18 +48,31 @@ const Profile = ({ navigation }) => {
 export default Profile
 
 const styles = StyleSheet.create({
+    btn:{
+        alignSelf:'center',
+        backgroundColor:'white',
+        height:60,
+        width:200,
+        alignItems:'center', 
+        justifyContent:'center', 
+        marginTop:15, 
+        borderRadius:35,
+        borderWidth:1,
+        borderColor:'blue'
+    },
+    container:{
+        flex:1
+    },
     profile:{
-        flex:0.25,
-        backgroundColor:'#8200d6',
-        height: 170,
+        backgroundColor:'white',
         borderRadius:25,
         margin:15,
         flexDirection:'row',
-        justifyContent:'flex-start'
+        justifyContent:'flex-start',
+        alignItems:'center'
     },
     edit_profile:{
-        flex:0.6,
-        backgroundColor:'#8200d6',
+        backgroundColor:'white',
         height: 370,
         borderRadius:25,
         margin:15,
@@ -70,115 +88,95 @@ const styles = StyleSheet.create({
         borderWidth:2
     },
     name_txt:{
-        fontWeight:'bold',
-        marginTop: 50,
+        fontWeight:'500',
+        alignSelf:'center',
         fontSize:23,
-        color:'white',
         paddingLeft:5
     },
     edit_icon:{
-        fontWeight:'bold',
-        marginTop: 50,
         fontSize:23,
-        color:'white',
         paddingLeft:45
     },
     cards:{
+        flexDirection:'row',
         height:60,
         backgroundColor:'white',
         margin:10,
-        borderRadius:15
+        borderRadius:15,
+        justifyContent:'flex-start',
+        borderBottomWidth:1
     },
     icon:{
         padding:10,
-        color:'orange'
+        color:'blue'
     },
     txt:{
-        fontWeight:'bold',
-        marginTop:10,
+        fontWeight:'500',
         fontSize:20,
-        paddingLeft:20
+    },
+    btntxt: {
+        fontSize: 18
+    },
+    btncard: {
+        height: 60,
+        justifyContent: 'space-between',
+        padding: 15,
+        borderBottomWidth:0.2,
+        flexDirection:'row',
+        backgroundColor:'white',
+        margin:5,
+        borderRadius:15,
+        borderBottomWidth:1
     }
 })
 
 function Card(){
     return(
         <TouchableOpacity style={styles.cards}>
-                <View style={{flex:1, flexDirection:'row', }}>    
-                    <Ionicons style={styles.icon} name='mail' size={50}></Ionicons>
-                    <View>                 
+                  
+                    <Ionicons style={styles.icon} name='mail' size={35}></Ionicons>
+                    <View style={{alignSelf:'center'}}>                 
                       <Text style={styles.txt}>Email</Text>
                       <Text>saadshafqat@gmail.com</Text>
                     </View>
-                    <FontAwesome name='edit' style={{paddingLeft:80, padding:15 }} size={30} ></FontAwesome>  
-                </View>
+                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:'blue', marginLeft:80}} size={28} ></FontAwesome>  
             </TouchableOpacity>
     )
 }
 function Card1(){
     return(
         <TouchableOpacity style={styles.cards}>
-                <View style={{flex:1, flexDirection:'row', }}>    
-                    <Ionicons style={styles.icon} name='home' size={50}></Ionicons>
-                    <View>                 
+                  
+                    <Ionicons style={styles.icon} name='mail' size={35}></Ionicons>
+                    <View style={{alignSelf:'center'}}>                 
                       <Text style={styles.txt}>Address</Text>
-                      <Text>street 3, g-6/3</Text>
+                      <Text>Street 3,G-6/3,Islamabad</Text>
                     </View>
-                    <FontAwesome name='edit' style={{paddingLeft:140, padding:15 }} size={30} ></FontAwesome>  
-                </View>
+                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:'blue', marginLeft:80}} size={28} ></FontAwesome>  
             </TouchableOpacity>
     )
 }
 function Card2(){
     return(
         <TouchableOpacity style={styles.cards}>
-                <View style={{flex:1, flexDirection:'row', }}>    
-                    <Ionicons style={styles.icon} name='person' size={50}></Ionicons>
-                    <View>                 
+                    <Ionicons style={styles.icon} name='person' size={35}></Ionicons>
+                    <View style={{alignSelf:'center'}}>                 
                       <Text style={styles.txt}>CNIC</Text>
-                      <Text>3510x-xxxxxxx-x</Text>
+                      <Text>35123-987654321031-5</Text>
                     </View>
-                   
-                </View>
+                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:'blue', marginLeft:80}} size={28} ></FontAwesome>  
             </TouchableOpacity>
     )
 }
 function Card3(){
     return(
         <TouchableOpacity style={styles.cards}>
-                <View style={{flex:1, flexDirection:'row', }}>    
-                    <Ionicons style={styles.icon} name='document-outline' size={50}></Ionicons>
-                    <View>                 
-                      <Text style={styles.txt}>Lisence</Text>
-                      <Text>Not Added Yet</Text>
-                    </View> 
-                </View>
-            </TouchableOpacity>
-    )
-}
-function Card4(){
-    return(
-        <TouchableOpacity style={styles.cards}>
-                <View style={{flex:1, flexDirection:'row', }}>    
-                    <Ionicons style={styles.icon} name='document-outline' size={50}></Ionicons>
-                    <View>                 
-                      <Text style={styles.txt}>Lisence</Text>
-                      <Text>Not Added Yet</Text>
-                    </View> 
-                </View>
-            </TouchableOpacity>
-    )
-}
-function Card5(){
-    return(
-        <TouchableOpacity style={styles.cards}>
-                <View style={{flex:1, flexDirection:'row', }}>    
-                    <Ionicons style={styles.icon} name='document-outline' size={50}></Ionicons>
-                    <View>                 
-                      <Text style={styles.txt}>Lisence</Text>
-                      <Text>Not Added Yet</Text>
-                    </View> 
-                </View>
+                    <Ionicons style={styles.icon} name='document-outline' size={35}></Ionicons>
+                    <View style={{alignSelf:'center'}}>                 
+                      <Text style={styles.txt}>CNIC</Text>
+                      <Text>35123-987654321031-5</Text>
+                    </View>
+                    <FontAwesome name='edit' style={{alignSelf:'center', marginRight:10, color:'blue', marginLeft:80}} size={28} ></FontAwesome>  
             </TouchableOpacity>
     )
 }

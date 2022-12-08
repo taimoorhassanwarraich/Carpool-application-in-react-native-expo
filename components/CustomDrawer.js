@@ -9,7 +9,7 @@ import SignOut from '../screens/Authentication/SignOut'
 const CustomDrawer = (props) => {
     return (
         <View style={{ flex: 1 }}>
-            <DrawerContentScrollView {...props} contentContainerStyle={{ backgroundColor: '#8200d6' }}>
+            <DrawerContentScrollView {...props} contentContainerStyle={{ backgroundColor: 'blue' }}>
                 <ImageBackground >
                     <Image source={require('../src/assets/Images/ProfileImage.webp')} style={styles.image_bg} />
                 </ImageBackground>
