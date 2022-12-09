@@ -18,7 +18,7 @@ const Posts = ({navigation}) => {
       <RideCard/>
       </View>
       <TouchableOpacity onPress={toRegistration} style={styles.btn}>
-        <MaterialIcons name='add-location-alt' color={'white'} size={50}/>
+        <MaterialIcons name='add-location-alt' color={'white'} size={24}/>
       </TouchableOpacity>
 
     </View>
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
   },
   btn:{
     backgroundColor:primary,
-    height:100,
-    width:100,
+    height:70,
+    width:70,
     alignItems:'center',
     justifyContent:'center',
     margin:15,

@@ -12,11 +12,9 @@ const Rides = ({navigation}) => {
       <RideCard style={styles.card} />
 
       <TouchableOpacity  onPress={()=>{navigation.navigate("LiveLocation")}} style={styles.btn}>
-        <FontAwesome5 name='search-location' color='white' size={40} onPress={()=>{navigation.navigate("Basic")}} style={styles.floatingbtn}/>
+        <FontAwesome5 name='search-location' color='white' size={24} onPress={()=>{navigation.navigate("Basic")}} style={styles.floatingbtn}/>
         {/* <Text style={{color:'white'}}> Search Ride</Text> */}
       </TouchableOpacity>
-
-
     </View>
   )
 }
@@ -35,8 +33,8 @@ const styles = StyleSheet.create({
   },
   btn:{
     backgroundColor:primary,
-    height:100,
-    width:100,
+    height:70,
+    width:70,
     alignItems:'center',
     justifyContent:'center',
     margin:15,

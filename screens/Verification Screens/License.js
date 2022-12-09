@@ -37,8 +37,8 @@ const License = ({navigation}) => {
 
       <Text style={styles.label}>Picture of License</Text>
       <FontAwesome name='drivers-license-o' size={100} style={{alignSelf:'center'}}/>
-          <TouchableOpacity style={styles.btn}>
-                <Text style={{color: 'white',fontWeight: '500',fontSize: 20}}>Upload</Text>
+          <TouchableOpacity style={{alignSelf:'center', borderRadius:25, borderWidth:1, borderColor:primary, width:250, height:50, alignItems:'center', justifyContent:'center'}}>
+                <Text style={{color: primary,fontWeight: '500',fontSize: 20}}>Upload</Text>
             </TouchableOpacity>
       </View>
 
@@ -49,7 +49,7 @@ const License = ({navigation}) => {
       </View>
       <TouchableOpacity style={styles.btn}>
                 <Text style={{color: 'white',fontWeight: '500',fontSize: 20}}>Save</Text>
-            </TouchableOpacity>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
         margin:7
     },
     btn:{
-        borderColor: 'blue',
         height: 60,
         width: 250,
         alignSelf: 'center',
